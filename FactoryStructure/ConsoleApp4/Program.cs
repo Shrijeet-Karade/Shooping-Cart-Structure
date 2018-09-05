@@ -6,28 +6,20 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-   public class Program:SelectType
+   public class Program
     {
        public static void Main(string[] args)
         {
+            ProductDetails obj = new ProductDetails();
             string desc = Console.ReadLine();
-            IProduct prod = GetProduct(desc);
+            IProduct prod = obj.GetProduct(desc);
             prod.GetTypeofProduct();
             prod.Book();
             prod.Save();
+            Console.ReadKey();
         }
 
-        private static IProduct GetProduct(string desc)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
-    public class SelectType
-    {
-        private IProduct GetProduct(string desc)
-        {
-
-            return new CarProduct();
-        }
-    }
+    
 }
